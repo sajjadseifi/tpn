@@ -18,11 +18,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "module": "CommonJS"
+    "module": "esnext"
   },
   "extends": "./tsconfig.paths.json",
   "exclude": [
-    "node_mpdules",
+    "node_mpdules"
   ],
   "include": [
     "src"

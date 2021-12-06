@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "tpn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,8 +7,8 @@
     "build": "yarn format && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rewired:start": "react-app-rewired start",
-    "rewired:build": "yarn format && react-app-rewired build",
+    "r:start": "react-app-rewired start",
+    "r:build": "yarn format && react-app-rewired build",
     "deploy": "gh-pages -d build",
     "deploy:git": "yarn predeploy:git && gh-pages -d build",
     "lint": "eslint .",
@@ -17,7 +17,6 @@
     "format:check": "prettier --check .",
     "prepare": "husky install"
   },
-  "homepage": "https://sajjadseifi.github.io/personal-website",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
