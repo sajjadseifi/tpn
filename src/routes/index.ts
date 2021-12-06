@@ -1,2 +1,1 @@
-export {Routes as default} from  "./routes";
- 
+export { Routes as default } from './routes'
