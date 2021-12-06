@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '@styles/index.css'
+import '@styles/index.scss'
+import '@styles/layout.scss'
 import Routes from './routes'
 import reportWebVitals from './reportWebVitals'
-import {  BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 // generate app for routeing
 const App = () => (
