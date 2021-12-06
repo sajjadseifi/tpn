@@ -1,6 +1,12 @@
 import React, { FC } from 'react'
-import { Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import { HomePage } from '@src/pages/public'
 
 export const PublicRoutes: FC = () => {
-  return <Switch></Switch>
+  return (
+    <Switch>
+      <Route path="/" component={HomePage} />
+      <Redirect to="/404" />
+    </Switch>
+  )
 }
