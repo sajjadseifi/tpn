@@ -1,0 +1,25 @@
+.Nav {
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0 10px 10px 1px #000;
+}
+.Nav .Content {
+  flex: 1;
+}
+.LogoBox .Logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.IconMenu .Icon {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+  transform: scale(1);
+}
+.IconMenu .Icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
