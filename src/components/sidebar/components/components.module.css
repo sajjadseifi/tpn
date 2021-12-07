@@ -1,0 +1,62 @@
+/* Profile Admin Component */
+.ProfileAdmin {
+}
+
+.ProfileAdmin .CloseBtn {
+  text-align: right;
+  padding: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.5s;
+  transform: scale(1);
+  transform-origin: center center;
+}
+.ProfileAdmin .CloseBtn:hover {
+  transform: scale(1.2);
+}
+.ProfileAdmin .ContentProfile {
+  text-align: center;
+}
+.ContentProfile .ProfileImage {
+  width: 36%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.ContentProfile .ProfileFullname {
+  margin: 5px 0;
+}
+
+.Menu {
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+  background-color: rgba(240, 248, 255, 0.055);
+}
+.Menu .MenuItem {
+  transition: 0.5s;
+  display: flex;
+  padding: 10px 30px 10px 20px;
+  cursor: pointer;
+}
+.Menu .MenuItem:hover {
+  background-color: rgba(240, 248, 255, 0.2);
+  padding-right: 40px;
+}
+.Menu .MenuItem.Select {
+  /* background-color: rgb(54, 99, 139); */
+  background-color: rgba(54, 99, 139, 0.459);
+  padding-right: 40px;
+}
+
+.MenuItem .ItemIcon > img {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 0 none;
+  box-shadow: 0;
+}
+
+.MenuItem .ItemTitle {
+  flex: 1;
+}
