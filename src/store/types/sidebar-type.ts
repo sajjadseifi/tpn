@@ -7,7 +7,7 @@ export const SIDEBAR_GHOST = '[SIDEBAR_GHOST]'
 export const SIDEBAR_STATIC = '[SIDEBAR_STATIC]'
 
 export interface ShowSideBarAction {
-  type: typeof SIDEBAR_SHOW
+  type: typeof SIDEBAR_HIDDEN
 }
 
 export interface HiddSideBarAction {
@@ -24,6 +24,11 @@ export interface GhostSideBarAction {
 export interface StaticSideBarAction {
   type: typeof SIDEBAR_STATIC
 }
-export type SideBarAction = ShowSideBarAction
+export type SideBarAction =
+  | ShowSideBarAction
+  | HiddSideBarAction
+  | StaticSideBarAction
+  | GhostSideBarAction
+  | ToggleSideBarAction
 
 export type AuthThunk = AppThunkAction<SideBarAction>
