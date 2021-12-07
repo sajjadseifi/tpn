@@ -7,10 +7,14 @@ import { HeadProfile } from './components'
 import { user } from '@src/constants/dumy-data'
 import { actionTypes } from '../dialog/context'
 import { useDialogDispatch } from '../dialog/context/hook-dialog'
+import { useDispatch } from 'react-redux'
+import { sidebarActions } from '@src/store/actions'
+
 export const NavigationAdmin = () => {
-  const dispatch = useDialogDispatch()
+  const dispatchDialog = useDialogDispatch()
+  const dispatch = useDispatch()
   const onMenuClick = () => {
-    dispatch(
+    dispatchDialog(
       actionTypes.initDialog({
         title: 'خطا',
         visibility: 'Show',
@@ -19,11 +23,12 @@ export const NavigationAdmin = () => {
         status: 'Error'
       })
     )
-    // dispatch(actionTypes.openDialog())
   }
+  const onShowSidebar = () => dispatch(sidebarActions.showSidebar())
+
   return (
     <div className={classes.Nav}>
-      <div onClick={onMenuClick} className={classes.IconMenu}>
+      <div onClick={onShowSidebar} className={classes.IconMenu}>
         <HiMenuAlt3 size={26} className={classes.Icon} color={BLACK} />
       </div>
       <div className={classes.Content}>
