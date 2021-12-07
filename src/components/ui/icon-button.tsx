@@ -10,12 +10,14 @@ interface IconButtonProps {
   color?: string
   outline?: boolean
   style?: any
+  onClick?: () => void
 }
 export const IconButton: FC<IconButtonProps> = (props) => {
-  const { icon: Icon, title, revers, iconProps, color, outline, style, ...popo } = props
+  const { icon: Icon, title, revers, iconProps, color, onClick, outline, style, ...popo } = props
 
   return (
     <div
+      onClick={onClick}
       className="ic"
       style={{
         background: outline ? '' : color,
@@ -30,4 +32,7 @@ export const IconButton: FC<IconButtonProps> = (props) => {
       <span className="ic-title">{title}</span>
     </div>
   )
+}
+IconButton.defaultProps = {
+  onClick: () => {}
 }
