@@ -11,11 +11,15 @@
   z-index: 11;
   background-color: rgba(0, 0, 0, 0);
 }
-.BackDrop.Open {
+.Open {
+  opacity: 1;
+  transition: 0.2s;
   background-color: rgba(0, 0, 0, 0.432);
 }
-.BackDrop.Close {
+.Close {
+  transition: 0.2s;
   background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
 }
 .ContianerChild {
   z-index: 12;

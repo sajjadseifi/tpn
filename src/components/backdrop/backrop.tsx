@@ -21,17 +21,12 @@ export const Backrop: FC<BackropProps> = ({ open, onClosed, closeable, children,
     if (closeable) setOpen(false)
     else onClosed && onClosed()
   }
+  const activation = isOpen ? classes.Open : classes.Close
 
   return (
     <div className={classes.Container} style={style}>
-      <div
-        onClick={onClose}
-        className={`
-        ${classes.BackDrop}
-        ${isOpen ? classes.Open : classes.Close}
-      `}
-      ></div>
-      <div className={classes.ContianerChild}>{children}</div>
+      <div onClick={onClose} className={`${classes.BackDrop} ${activation}`}></div>
+      <div className={`${classes.ContianerChild} ${activation}`}>{children}</div>
     </div>
   )
 }
