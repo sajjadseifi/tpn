@@ -1,5 +1,4 @@
 import React from 'react'
-
 export const FormWizardAdminPage = () => {
-  return <>FormWizardAdmin</>
+  return <div>FormWizardAdmin</div>
 }
