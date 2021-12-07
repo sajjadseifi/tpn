@@ -8,13 +8,14 @@ import * as colors from '@src/constants/colors'
 
 type StatusType = 'Info' | 'Error' | 'Success' | 'Default'
 
-interface DialogPorps {
+export interface DialogPorps {
   icon?: IconType
   iconProps?: IconBaseProps
   title: string
   onOk?: () => void
   onCancel?: () => void
   status?: StatusType
+  children?: React.ReactNode
 }
 const colorStatus = {
   Info: colors.CORNFLOWER_BLUE,
@@ -24,6 +25,7 @@ const colorStatus = {
 }
 export const Dialog: FC<DialogPorps> = ({ onCancel, onOk, children, icon: Icon, status, iconProps, title }) => {
   const [open, setOpen] = useState(true)
+  const [rm, setRm] = useState(false)
   let bgTop = colorStatus.Default
   if (status) bgTop = colorStatus[status]
 
@@ -32,8 +34,13 @@ export const Dialog: FC<DialogPorps> = ({ onCancel, onOk, children, icon: Icon, 
     else onCancel && onCancel()
     setOpen(false)
   }
+  const removeOnDom = () => {
+    setOpen(false)
+    setTimeout(() => setRm(true), 1000)
+  }
+  if (rm) return null
   return (
-    <Backrop open={open}>
+    <Backrop onClosed={removeOnDom} open={open}>
       <div className={classes.Dialog}>
         <div style={{ background: bgTop }} className={classes.Top}>
           <h3 className={classes.Title}>{title}</h3>
