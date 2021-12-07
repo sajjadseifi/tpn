@@ -5,4 +5,5 @@ export interface UserLogged{
     lastname:string,
     picture?:string,
     role:Roles,
+    displayRole:string,
 }

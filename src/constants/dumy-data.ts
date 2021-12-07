@@ -5,5 +5,6 @@ export const user :UserLogged = {
     firstname:"سجاد",
     lastname:"سیفی",
     picture:userPic,
-    role:"admin"
+    role:"admin",
+    displayRole:"ادمین"
 };
