@@ -18,12 +18,15 @@
   &-sidebar {
     background-color: blanchedalmond;
     transform: translate(0);
-
+    transition: 0.5s;
     &.railroad {
-      &.open * {
-      }
-      &.close * {
-      }
+      width: 0;
+    }
+    &.open * {
+      transform: translateX(0);
+    }
+    &.close * {
+      transform: translateX(100%);
     }
   }
 }
