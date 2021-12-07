@@ -6,13 +6,16 @@ import '@styles/ui.scss'
 import Routes from './routes'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { DialogProvider } from './components/dialog/context'
 
 // generate app for routeing
 const App = () => (
   <React.StrictMode>
-    <Router>
-      <Routes />
-    </Router>
+    <DialogProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </DialogProvider>
   </React.StrictMode>
 )
 
