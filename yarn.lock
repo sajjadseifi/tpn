@@ -14382,6 +14382,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"redux-devtools-extension@npm:^2.13.9":
+  version: 2.13.9
+  resolution: "redux-devtools-extension@npm:2.13.9"
+  peerDependencies:
+    redux: ^3.1.0 || ^4.0.0
+  checksum: 603d48fd6acf3922ef373b251ab3fdbb990035e90284191047b29d25b06ea18122bc4ef01e0704ccae495acb27ab5e47b560937e98213605dd88299470025db9
+  languageName: node
+  linkType: hard
+
 "redux-thunk@npm:^2.4.1":
   version: 2.4.1
   resolution: "redux-thunk@npm:2.4.1"
@@ -16550,6 +16559,7 @@ resolve@^2.0.0-next.3:
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
     redux: ^4.1.2
+    redux-devtools-extension: ^2.13.9
     redux-thunk: ^2.4.1
     sass: ^1.37.0
     sass-loader: ^12.1.0
