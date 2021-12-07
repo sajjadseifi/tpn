@@ -10,7 +10,9 @@
       "@pages/*": ["./src/pages/*"],
       "@store/*": ["./src/store/*"],
       "@routes/*": ["./src/routes/*"],
+      "@config/*": ["./src/config/*"],
       "@constants/*": ["./src/constants/*"],
+      "@hook/*": ["./src/hook/*"],
       "@utils/*": ["./src/utils/*"]
     }
   }
