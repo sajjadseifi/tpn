@@ -11,16 +11,12 @@
     background: green;
   }
   &-nav {
-    // height: $nav-height;
-    background-color: rebeccapurple;
   }
   &-section {
     background: yellow;
   }
   &-sidebar {
     background-color: blanchedalmond;
-    width: fit-content;
-    padding: 10;
     transform: translate(0);
 
     &.railroad {
