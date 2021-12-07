@@ -1,7 +1,7 @@
 //updating origin object with new target object
-export const updateObject = (origin: any, target: any) => ({ ...origin, ...target })
+export const updateObject = <T>(origin: T, target: any): T => ({ ...origin, ...target })
 //
-export const actionCreator = (type: string, payload: any) => ({
+export const actionCreator = (type: string, payload?: any) => ({
   type,
   payload
 })
