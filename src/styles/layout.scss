@@ -17,7 +17,8 @@
   }
   &-sidebar {
     background-color: blanchedalmond;
-
+    position: relative;
+    z-index: 100;
     &.railroad {
       width: 0;
     }
