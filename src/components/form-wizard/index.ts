@@ -1,2 +1,2 @@
 export { FromWizard } from './form-wizard'
-export type { FormContnetProps, FormType } from './form-wizard'
+export * from './form-wizard-type'
