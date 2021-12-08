@@ -1,12 +1,8 @@
-import { FormContnetProps } from '@src/components/form-wizard'
-import { FCR, IDictionary } from '@src/types/types'
+import { IWizard } from '@src/components/form-wizard'
+import { FCR } from '@src/types/types'
 import { updateObject } from '@src/utils/utils'
 import { actionTypes } from '../actions'
 import { WizardAction } from '../types/wizard-type'
-
-export interface IWizard extends FormContnetProps {
-  render: ({ form }: { form: IDictionary<any> }) => JSX.Element
-}
 
 export interface WizardState {
   wizards: IWizard[]

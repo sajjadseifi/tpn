@@ -1,6 +1,5 @@
-import { FormType } from '@src/components/form-wizard'
+import { FormType, IWizard } from '@src/components/form-wizard'
 import { actionTypes } from '../actions'
-import { IWizard } from '../reducers/wizard-redcuer'
 
 export interface InitWizardAction {
   type: typeof actionTypes.WIZARD_INIT

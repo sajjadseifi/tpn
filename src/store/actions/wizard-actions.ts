@@ -1,7 +1,7 @@
-import { IWizard } from '../reducers/wizard-redcuer'
 import { actionTypes } from '.'
 import { createReducerProps } from '../types/action-types'
 import { wizardTypes } from '../types'
+import { IWizard } from '@src/components/form-wizard'
 
 export const initWizard = (wizards: IWizard[]) =>
   createReducerProps(actionTypes.WIZARD_INIT, wizards) as wizardTypes.InitWizardAction
