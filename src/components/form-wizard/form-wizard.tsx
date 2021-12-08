@@ -1,11 +1,11 @@
-import React, { Dispatch, FC, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import classes from './form-wizard.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '@src/store'
 import { WizardState } from '@src/store/reducers/wizard-redcuer'
 import Proggres from './progress'
-import { IDictionary, Partial } from '@src/types/types'
-import { Form, Formik, FormikHelpers } from 'formik'
+import { Partial } from '@src/types/types'
+import { Form, Formik } from 'formik'
 import { TitleUi } from '../ui'
 import { Movment } from './movment'
 import { wizardActions } from '@src/store/actions'
@@ -13,21 +13,7 @@ import { useDialogDispatch } from '../dialog/context/hook-dialog'
 import { actionTypes } from '../dialog/context'
 import { HiExclamation, HiTicket } from 'react-icons/hi'
 import { WizardAction } from '@src/store/types/wizard-type'
-
-export type FormType = IDictionary<any>
-export type ReturnSubmit = {
-  messages: string[]
-  ok: boolean
-}
-export type SubmitType = <T>(values: T, dispatch: Dispatch<any>) => Partial<ReturnSubmit> | void
-
-export interface FormContnetProps {
-  title: string
-  form: FormType
-  movment?: FC<any>
-  onSubmit?: SubmitType
-  validationSchema?: any
-}
+import { ReturnSubmit } from '.'
 
 export const FromWizard = () => {
   const dispatch = useDispatch()
@@ -70,12 +56,15 @@ export const FromWizard = () => {
       <div className={classes.FormContent}>
         <TitleUi className={classes.Title} subject={title} />
         <Formik initialValues={form} {...{ onSubmit, validationSchema }}>
-          {({ submitForm }) => (
-            <Form>
-              <Render {...{ form }} />
-              <MovmentCmp {...{ submitForm }} />
-            </Form>
-          )}
+          {(props) => {
+            console.log(props.errors)
+            return (
+              <Form>
+                <Render {...{ form, ...props }} />
+                <MovmentCmp {...{ submitForm: props.submitForm }} />
+              </Form>
+            )
+          }}
         </Formik>
       </div>
     </div>
