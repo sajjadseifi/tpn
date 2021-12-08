@@ -1,9 +1,9 @@
-import { FCR } from '@src/types/types'
+import { FormContnetProps } from '@src/components/form-wizard'
+import { FCR, IDictionary } from '@src/types/types'
 import { WizardAction } from '../types/wizard-type'
 
-interface IWizard {
-  title: string
-  render: (props: any) => JSX.Element
+interface IWizard extends FormContnetProps {
+  render: ({ form }: { form: IDictionary<any> }) => JSX.Element
 }
 
 export interface WizardState {
@@ -12,12 +12,14 @@ export interface WizardState {
   isLoading?: boolean
   isError?: boolean
   errors: Object
+  visitedLevel: number
 }
 
 const initialState: WizardState = {
   wizards: [],
   level: 0,
-  errors: {}
+  errors: {},
+  visitedLevel: 0
 }
 
 const authReducer: FCR<WizardState, WizardAction> = (state = initialState, action) => {
