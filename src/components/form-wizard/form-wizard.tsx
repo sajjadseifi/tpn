@@ -7,6 +7,7 @@ import Proggres from './progress'
 import { IDictionary } from '@src/types/types'
 import { Form, Formik, FormikHelpers } from 'formik'
 import { TitleUi } from '../ui'
+import { Movment } from './movment'
 
 export type FormType = IDictionary<any>
 
@@ -23,9 +24,10 @@ export const FromWizard = () => {
 
   if (!WIZARD) return <Fragment></Fragment>
 
-  const { form, render: Render, title, movment: Movment, onSubmit: submited } = wizards[level]
+  const { form, render: Render, title, movment, onSubmit: submited } = wizards[level]
 
   const onSubmit = submited ? submited : () => {}
+  const MovmentCmp = movment ? movment : Movment
   return (
     <div>
       <Proggres />
@@ -34,7 +36,7 @@ export const FromWizard = () => {
         <Formik initialValues={form} {...{ onSubmit }}>
           <Form>
             <Render {...{ form }} />
-            {Movment && <Movment />}
+            <MovmentCmp />
           </Form>
         </Formik>
       </div>
