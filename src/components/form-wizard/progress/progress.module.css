@@ -41,6 +41,7 @@
 .ProgressItem.Entered {
   background-color: rgb(25, 87, 200);
   border: 3px solid rgb(82, 112, 246);
+  cursor: pointer;
 }
 .ProgressItem.Current {
   background-color: rgb(36, 101, 221);

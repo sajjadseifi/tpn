@@ -19,3 +19,6 @@ export const prevWizard = () => createReducerProps(actionTypes.WIZARD_PREV) as w
 export const nextWizard = () => createReducerProps(actionTypes.WIZARD_NEXT) as wizardTypes.NextWizardAction
 
 export const submitedWizard = () => createReducerProps(actionTypes.WIZARD_SUBMITED) as wizardTypes.SubmitedWizardAction
+
+export const selectEnteredWizard = (enterdLevel: number) =>
+  createReducerProps(actionTypes.WIZARD_GOTO_ENTERED, { enterdLevel }) as wizardTypes.GotoEnteredFormWizardAction

@@ -39,6 +39,12 @@ const goNext = (state: WizardState) => {
   return updateObject(state, { level: updatedLevel, visitedLevel: updatedLevel })
 }
 
+const goEntered = (state: WizardState, entered: number) => {
+  if (entered > state.visitedLevel) return state
+
+  return updateObject(state, { level: entered })
+}
+
 const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.WIZARD_INIT:
@@ -55,6 +61,8 @@ const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, act
       return updateObject(state, { loading: true })
     case actionTypes.WIZARD_LOADING_FINISHED:
       return updateObject(state, { loading: false })
+    case actionTypes.WIZARD_GOTO_ENTERED:
+      return goEntered(state, action.payload.enterdLevel)
     default:
       return state
   }

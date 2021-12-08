@@ -34,6 +34,13 @@ export interface ClearFormWizardAction {
   type: typeof actionTypes.WIZARD_CLEAR_FORM_VALUE
 }
 
+export interface GotoEnteredFormWizardAction {
+  type: typeof actionTypes.WIZARD_GOTO_ENTERED
+  payload: {
+    enterdLevel: number
+  }
+}
+
 export type WizardAction =
   | ClearFormWizardAction
   | ClearWizardAction
@@ -44,4 +51,5 @@ export type WizardAction =
   | PrevWizardAction
   | SubmitedWizardAction
   | UpdteFormWizardAction
+  | GotoEnteredFormWizardAction
 // export type AuthThunk = AppThunkAction<WizardAction>
