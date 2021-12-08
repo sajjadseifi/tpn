@@ -1,18 +1,22 @@
-import { IWizard } from '@src/store/reducers/wizard-redcuer'
+import { IWizard } from '@src/components/form-wizard'
 import { sleep } from '@src/utils/utils'
 import { AcceptorForm } from './sections'
 import { IdenfiyForm } from './sections'
 import { PersonalForm } from './sections'
+import { acceprorSchema } from './sections/acceptor-form'
+import { idenfiySchema } from './sections/idenfiy-form'
+import { personalSchema } from './sections/pesonal-form'
 
 export const forms: IWizard[] = [
   {
     title: 'اطلاعات شخصی',
     form: {
-      firsname: '',
+      firstname: '',
       lastname: '',
       city: '',
       sex: -1
     },
+    validationSchema: personalSchema,
     render: PersonalForm,
     onSubmit: (values, dispatch) => {
       console.log('start')
@@ -35,6 +39,7 @@ export const forms: IWizard[] = [
       phone: '',
       nationalCode: ''
     },
+    validationSchema: idenfiySchema,
     render: IdenfiyForm,
     onSubmit: (values, dispatch) => {
       console.log('start')
@@ -53,6 +58,7 @@ export const forms: IWizard[] = [
     form: {
       code: ''
     },
+    validationSchema: acceprorSchema,
     render: AcceptorForm,
     onSubmit: (values, dispatch) => {
       console.log('start')
