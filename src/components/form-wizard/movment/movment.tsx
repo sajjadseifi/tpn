@@ -23,9 +23,8 @@ export const Movment: FC<Partial<MovmentProps>> = ({ submitForm, loading }) => {
   // const onSubmit = () => dispatch(wizardActions.submitedWizard())
   return (
     <div className={classes.Movment}>
-      {isStart && <div></div>}
-      {!isStart && <IconButton onClick={onPrev} {...prevBtn} />}
-      {!isEnd && <IconButton onClick={submitForm} {...(isEnd ? submitedBtn : nextBtn)} />}
+      {isStart ? <div></div> : <IconButton onClick={onPrev} {...prevBtn} />}
+      <IconButton onClick={submitForm} {...(isEnd ? submitedBtn : nextBtn)} />
     </div>
   )
 }
