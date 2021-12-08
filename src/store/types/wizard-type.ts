@@ -1,4 +1,5 @@
 import { AppThunkAction } from '..'
+import { IWizard } from '../reducers/wizard-redcuer'
 
 export const WIZARD_INIT = '[WIZARD_INIT]'
 export const WIZARD_CLEAR = '[WIZARD_CLEAR]'
@@ -9,10 +10,11 @@ export const WIZARD_LOADING_START = '[WIZARD_LOADING_START]'
 export const WIZARD_LOADING_FINISHED = '[WIZARD_LOADING_FINISHED]'
 
 export interface InitWizardAction {
-  type: typeof WIZARD_LOADING_START
+  type: typeof WIZARD_INIT
+  payload: IWizard[]
 }
 export interface ClearWizardAction {
-  type: typeof WIZARD_LOADING_FINISHED
+  type: typeof WIZARD_CLEAR
 }
 export interface NextWizardAction {
   type: typeof WIZARD_NEXT
