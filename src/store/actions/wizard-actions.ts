@@ -14,7 +14,7 @@ export const loadingStartWizard = () =>
 export const loadingFinishedWizard = () =>
   createReducerProps(actionTypes.WIZARD_LOADING_FINISHED) as wizardTypes.LoadingFinishedWizardAction
 
-export const prevWizard = () => createReducerProps(actionTypes.WIZARD_NEXT) as wizardTypes.PrevWizardAction
+export const prevWizard = () => createReducerProps(actionTypes.WIZARD_PREV) as wizardTypes.PrevWizardAction
 
 export const nextWizard = () => createReducerProps(actionTypes.WIZARD_NEXT) as wizardTypes.NextWizardAction
 
