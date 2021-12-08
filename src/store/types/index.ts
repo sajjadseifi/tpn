@@ -1,2 +1,4 @@
-export * as sidebarTypes from './sidebar-type'
-export * as wizardTypes from './wizard-type'
+import * as sidebarTypes from './sidebar-type'
+import * as wizardTypes from './wizard-type'
+
+export { sidebarTypes, wizardTypes }

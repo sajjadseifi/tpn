@@ -1,45 +1,47 @@
-import { AppThunkAction } from '..'
+import { FormType } from '@src/components/form-wizard'
+import { actionTypes } from '../actions'
 import { IWizard } from '../reducers/wizard-redcuer'
 
-export const WIZARD_INIT = '[WIZARD_INIT]'
-export const WIZARD_CLEAR = '[WIZARD_CLEAR]'
-export const WIZARD_NEXT = '[WIZARD_NEXT]'
-export const WIZARD_PREV = '[WIZARD_PREV]'
-export const WIZARD_SUBMITED = '[WIZARD_SUBMITED]'
-export const WIZARD_LOADING_START = '[WIZARD_LOADING_START]'
-export const WIZARD_LOADING_FINISHED = '[WIZARD_LOADING_FINISHED]'
-
 export interface InitWizardAction {
-  type: typeof WIZARD_INIT
+  type: typeof actionTypes.WIZARD_INIT
   payload: IWizard[]
 }
 export interface ClearWizardAction {
-  type: typeof WIZARD_CLEAR
+  type: typeof actionTypes.WIZARD_CLEAR
 }
 export interface NextWizardAction {
-  type: typeof WIZARD_NEXT
+  type: typeof actionTypes.WIZARD_NEXT
 }
 export interface PrevWizardAction {
-  type: typeof WIZARD_PREV
+  type: typeof actionTypes.WIZARD_PREV
 }
 export interface SubmitedWizardAction {
-  type: typeof WIZARD_SUBMITED
+  type: typeof actionTypes.WIZARD_SUBMITED
 }
 
 export interface LoadingStartWizardAction {
-  type: typeof WIZARD_LOADING_START
+  type: typeof actionTypes.WIZARD_LOADING_START
 }
 export interface LoadingFinishedWizardAction {
-  type: typeof WIZARD_LOADING_FINISHED
+  type: typeof actionTypes.WIZARD_LOADING_FINISHED
+}
+
+export interface UpdteFormWizardAction {
+  type: typeof actionTypes.WIZARD_UPDATE_FORM_VALUE
+  payload: FormType
+}
+export interface ClearFormWizardAction {
+  type: typeof actionTypes.WIZARD_CLEAR_FORM_VALUE
 }
 
 export type WizardAction =
-  | InitWizardAction
+  | ClearFormWizardAction
   | ClearWizardAction
+  | InitWizardAction
+  | LoadingStartWizardAction
+  | LoadingFinishedWizardAction
   | NextWizardAction
   | PrevWizardAction
   | SubmitedWizardAction
-  | LoadingStartWizardAction
-  | LoadingFinishedWizardAction
-
-export type AuthThunk = AppThunkAction<WizardAction>
+  | UpdteFormWizardAction
+// export type AuthThunk = AppThunkAction<WizardAction>
