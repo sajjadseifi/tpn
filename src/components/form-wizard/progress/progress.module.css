@@ -1,0 +1,54 @@
+.Progress {
+  display: flex;
+  /* background-color: green; */
+  position: relative;
+  padding: 10px 0;
+}
+
+.Progress .ProgressLinear {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2em;
+  transition: 0.5s;
+  background-color: rgb(89, 175, 255);
+}
+.Progress .ProgressLinear.ProgressLinearBack {
+  background-color: rgba(0, 132, 255, 0.2);
+}
+/*  */
+.Progress .ProggresLists {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ProggresLists .ProgressItem {
+  width: 26px;
+  height: 26px;
+  background-color: rgb(124, 164, 238);
+  border: 3px solid rgb(114, 138, 241);
+  transform-origin: center center;
+  transform: scale(1);
+  box-shadow: 0;
+  transition: 0.5s;
+}
+.ProgressItem.Entered {
+  background-color: rgb(25, 87, 200);
+  border: 3px solid rgb(82, 112, 246);
+}
+.ProgressItem.Current {
+  background-color: rgb(36, 101, 221);
+  border: 3px solid rgb(82, 112, 246);
+  transform: scale(1.3);
+  box-shadow: 0 0 5px 1px rgba(35, 119, 255, 0.609);
+}
+
+.ProgressItem.Circle {
+  border-radius: 50%;
+}
