@@ -12,10 +12,10 @@ export default function configureStore(history: History, initialState: RootState
     router: connectRouter(history)
   })
 
-  const enhancers: never[] = []
+  const enhancers: any[] = []
   const windowIfDefined = typeof window === 'undefined' ? null : (window as any) // eslint-disable-line @typescript-eslint/no-explicit-any
   if (windowIfDefined && windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__) {
-    //   enhancers.push(windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__());
+    enhancers.push(windowIfDefined.__REDUX_DEVTOOLS_EXTENSION__())
   }
 
   return createStore(rootReducer, initialState, compose(applyMiddleware(...middleware), ...enhancers))
