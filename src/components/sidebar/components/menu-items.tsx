@@ -9,8 +9,8 @@ interface MenuItemsProps {
 export const MenuItems: FC<MenuItemsProps> = ({ items }) => {
   return (
     <ul className={classes.Menu}>
-      {items.map((it) => (
-        <Item {...it} onPress={() => console.log(it.id)} />
+      {items.map((it, key) => (
+        <Item key={key} {...it} onPress={() => console.log(it.id)} />
       ))}
     </ul>
   )
