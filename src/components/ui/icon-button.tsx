@@ -14,7 +14,6 @@ interface IconButtonProps {
 }
 export const IconButton: FC<IconButtonProps> = (props) => {
   const { icon: Icon, title, revers, iconProps, color, onClick, outline, style, ...popo } = props
-
   return (
     <div
       onClick={onClick}
@@ -24,6 +23,7 @@ export const IconButton: FC<IconButtonProps> = (props) => {
         color: outline ? color : WHITE,
         display: 'flex',
         flexDirection: revers ? 'row-reverse' : 'row',
+        alignItems: 'center',
         ...style
       }}
       {...popo}
