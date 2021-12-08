@@ -1,7 +1,7 @@
-import { NOT_FOUND_PAGE } from '@src/constants/path'
-import { AdminLayout } from '@src/layout'
-import { FormWizardAdminPage } from '@src/pages/admin/form-wizard-admin-page'
 import React, { FC } from 'react'
+import * as path from '@src/constants/path'
+import { AdminLayout } from '@src/layout'
+import { FormWizardAdminPage } from '@src/pages'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
 export const AdminPannelRoutes: FC = () => {
@@ -9,7 +9,7 @@ export const AdminPannelRoutes: FC = () => {
     <AdminLayout>
       <Switch>
         <Route path="/admin/form-wizard" component={FormWizardAdminPage} />
-        <Redirect to={NOT_FOUND_PAGE} />
+        <Redirect to={path.NOT_FOUND_PAGE} />
       </Switch>
     </AdminLayout>
   )
