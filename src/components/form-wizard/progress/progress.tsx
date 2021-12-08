@@ -9,13 +9,13 @@ export interface ProggresProps {
 }
 
 export const Proggres: FC<ProggresProps> = ({ clickedProggresItem: clickedPI }) => {
-  const { wizards, visitedLevel: vlvl } = useSelector<RootState>((state) => state.wizard) as WizardState
+  const { wizards, visitedLevel: vlvl, level } = useSelector<RootState>((state) => state.wizard) as WizardState
   const levelSize = wizards.length
 
   const width = levelSize === 0 ? 0 : levelSize === 1 ? vlvl * 100 : (vlvl * 100) / (levelSize - 1)
 
   const progItms: ProggresItemProps[] = [...Array(levelSize)].map((_, index) => ({
-    isCurrent: index === vlvl,
+    isCurrent: index === level,
     isEntered: index <= vlvl,
     clicked: () => clickedPI && clickedPI(index)
   }))
