@@ -44,6 +44,11 @@ const goEntered = (state: WizardState, entered: number) => {
 
   return updateObject(state, { level: entered })
 }
+const submit = (state: WizardState, values: any) => {
+  console.log('submiting')
+
+  return state
+}
 
 const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, action) => {
   switch (action.type) {
@@ -56,7 +61,7 @@ const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, act
     case actionTypes.WIZARD_PREV:
       return goPrev(state)
     case actionTypes.WIZARD_SUBMITED:
-      return state
+      return submit(state, '')
     case actionTypes.WIZARD_LOADING_START:
       return updateObject(state, { loading: true })
     case actionTypes.WIZARD_LOADING_FINISHED:
