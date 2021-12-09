@@ -9,7 +9,6 @@
     "eject": "react-scripts eject",
     "r:start": "react-app-rewired start",
     "r:build": "yarn format && react-app-rewired build",
-    "bld": "react-app-rewired build",
     "deploy": "gh-pages -d build",
     "deploy:git": "yarn predeploy:git && gh-pages -d build",
     "lint": "eslint .",
@@ -18,6 +17,7 @@
     "format:check": "prettier --check .",
     "prepare": "husky install"
   },
+  "homepage": "https://sajjadseifi.github.io/tpn",
   "dependencies": {
     "@types/yup": "^0.29.13",
     "connected-react-router": "^6.9.2",
