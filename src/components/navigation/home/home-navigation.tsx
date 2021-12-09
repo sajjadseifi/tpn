@@ -5,7 +5,8 @@ import { LogoHomeNavigation, NavListHomeNavigation } from './components'
 const routes = [
   {
     title: 'خانه',
-    route: '/'
+    route: '/',
+    exact: true
   },
   {
     title: 'تماس با ما',
@@ -13,7 +14,7 @@ const routes = [
   },
   {
     title: 'دمو',
-    route: '/admin/wizard-form'
+    route: '/admin/form-wizard'
   }
 ]
 
