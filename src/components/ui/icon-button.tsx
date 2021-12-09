@@ -40,7 +40,7 @@ export const IconButton: FC<IconButtonProps> = (props) => {
       {Icon && <Icon className="ic-icon" {...iconProps} />}
       <span className="ic-title">{title}</span>
       <div className="loading">
-        <Loader color={WHITE} size={20} />
+        <Loader color={WHITE} size={17} />
       </div>
     </div>
   )
