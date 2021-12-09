@@ -1,1 +1,2 @@
-export {NavigationAdmin} from "./navigation-admin"
+export * from './admin'
+export * from './home'
