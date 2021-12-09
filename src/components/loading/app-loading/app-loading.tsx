@@ -1,12 +1,12 @@
 import React from 'react'
 import { classes } from '.'
-
+import './app-loading.scss'
+import { SnipperKebrit } from './snipper-kebrit'
 export const AppLoadin = () => {
   return (
     <div className={classes.AppLoading}>
-      <div className={classes.Cotnent}>
-        <span>Loading....</span>
-      </div>
+      <SnipperKebrit />
+      <span className={classes.LoadingText}>...درحال بارگذاری</span>
     </div>
   )
 }
