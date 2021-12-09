@@ -7,4 +7,4 @@ export const actionCreator = (type: string, payload?: any) => ({
 })
 
 //
-export const sleep = (second: number) => new Promise((res, rej) => setTimeout(() => res(0), second * 1000))
+export const sleep = (second: number) => new Promise((resolve) => setTimeout(resolve, second * 1000))

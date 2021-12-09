@@ -18,9 +18,9 @@ export const forms: IWizard[] = [
     },
     validationSchema: personalSchema,
     render: PersonalForm,
-    onSubmit: (values, dispatch) => {
+    onSubmit: async (values, dispatch) => {
       console.log('start')
-      sleep(1) //fetch data
+      await sleep(1) //fetch data
       console.log('end')
 
       const ok = Math.floor(Math.random() * 2) == 1
@@ -41,9 +41,9 @@ export const forms: IWizard[] = [
     },
     validationSchema: idenfiySchema,
     render: IdenfiyForm,
-    onSubmit: (values, dispatch) => {
+    onSubmit: async (values, dispatch) => {
       console.log('start')
-      sleep(3) //fetch data
+      await sleep(3) //fetch data
       console.log('end')
 
       const ok = Math.floor(Math.random() * 2) == 1
@@ -60,9 +60,9 @@ export const forms: IWizard[] = [
     },
     validationSchema: acceprorSchema,
     render: AcceptorForm,
-    onSubmit: (values, dispatch) => {
+    onSubmit: async (values, dispatch) => {
       console.log('start')
-      sleep(0.5) //fetch data
+      await sleep(0.5) //fetch data
       console.log('end')
 
       const ok = Math.floor(Math.random() * 2) == 1

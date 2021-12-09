@@ -7,7 +7,7 @@ export type ReturnSubmit = {
   messages: string[]
   ok: boolean
 }
-export type SubmitType = <T>(values: T, dispatch: Dispatch<any>) => Partial<ReturnSubmit> | void
+export type SubmitType = <T>(values: T, dispatch: Dispatch<any>) => Promise<Partial<ReturnSubmit> | void>
 
 export interface RenderdProps extends FormikProps<FormType> {
   form: IDictionary<any>

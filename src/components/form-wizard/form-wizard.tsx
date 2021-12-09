@@ -27,10 +27,10 @@ export const FromWizard = () => {
 
   const MovmentCmp = movment ? movment : Movment
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     let action: any = level === wizards.length - 1 ? wizardActions.submitedWizard : wizardActions.nextWizard
     if (submited) {
-      const ret = submited(values, dispatch)
+      const ret = await submited(values, dispatch)
       if (ret) {
         showDialog(ret, action)
         return
@@ -59,7 +59,7 @@ export const FromWizard = () => {
           {(props) => (
             <Form>
               <Render {...{ form, ...props }} />
-              <MovmentCmp {...{ submitForm: props.submitForm }} />
+              <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} />
             </Form>
           )}
         </Formik>
