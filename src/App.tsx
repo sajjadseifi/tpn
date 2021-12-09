@@ -6,14 +6,16 @@ import { Provider } from 'react-redux'
 import store from './store'
 import { AppLoadin } from './components/loading'
 
-export const App = () => (
-  <Suspense fallback={AppLoadin}>
-    <Provider store={store}>
-      <DialogProvider>
-        <Router>
-          <Routes />
-        </Router>
-      </DialogProvider>
-    </Provider>
-  </Suspense>
-)
+export const App = () => {
+  return (
+    <Suspense fallback={AppLoadin}>
+      <Provider store={store}>
+        <DialogProvider>
+          <Router>
+            <Routes />
+          </Router>
+        </DialogProvider>
+      </Provider>
+    </Suspense>
+  )
+}
