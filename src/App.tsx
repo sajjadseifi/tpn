@@ -11,7 +11,7 @@ export const App = () => {
     <Suspense fallback={AppLoadin}>
       <Provider store={store}>
         <DialogProvider>
-          <Router>
+          <Router basename="/tpn">
             <Routes />
           </Router>
         </DialogProvider>
