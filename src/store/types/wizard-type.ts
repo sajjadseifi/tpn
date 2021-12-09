@@ -39,6 +39,12 @@ export interface GotoEnteredFormWizardAction {
     enterdLevel: number
   }
 }
+export interface CodeFormWizardAction {
+  type: typeof actionTypes.WIZARD_CODE
+  payload: {
+    code: number
+  }
+}
 
 export type WizardAction =
   | ClearFormWizardAction
@@ -51,4 +57,5 @@ export type WizardAction =
   | SubmitedWizardAction
   | UpdteFormWizardAction
   | GotoEnteredFormWizardAction
+  | CodeFormWizardAction
 // export type AuthThunk = AppThunkAction<WizardAction>

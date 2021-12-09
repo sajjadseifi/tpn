@@ -11,13 +11,15 @@ export interface WizardState {
   isError?: boolean
   errors: Object
   visitedLevel: number
+  code: string
 }
 
 const initialState: WizardState = {
   wizards: [],
   level: 0,
   errors: {},
-  visitedLevel: 0
+  visitedLevel: 0,
+  code: ''
 }
 const init = (state: WizardState, wizards: IWizard[]) => updateObject(state, { wizards })
 
@@ -64,6 +66,8 @@ const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, act
       return updateObject(state, { loading: false })
     case actionTypes.WIZARD_GOTO_ENTERED:
       return goEntered(state, action.payload.enterdLevel)
+    case actionTypes.WIZARD_CODE:
+      return updateObject(state, { code: action.payload.code })
     default:
       return state
   }
