@@ -9,6 +9,7 @@ interface IconButtonProps {
   revers: boolean
   color: string
   outline: boolean
+  bordered: boolean
   style: any
   loading: boolean
   disabled: boolean
@@ -27,6 +28,7 @@ export const IconButton: FC<Partial<IconButtonProps>> = (props) => {
     onClick: clicked,
     outline,
     loading,
+    bordered,
     disabled,
     ...popo
   } = props
@@ -35,12 +37,18 @@ export const IconButton: FC<Partial<IconButtonProps>> = (props) => {
     background: outline ? '' : color,
     color: outline ? color : WHITE,
     flexDirection: revers ? 'row-reverse' : 'row',
+    borderColor: bordered ? color : '',
     ...styles
   }
 
   const onClick = loading || disabled ? () => {} : clicked
 
-  const className = `ic ${loading ? 'loader' : ''} ${disabled ? 'disable' : ''}`
+  const className = `
+    ic 
+    ${loading ? 'loader' : ''} 
+    ${disabled ? 'disable' : ''}
+    ${bordered ? 'bordered' : ''}
+  `
 
   return (
     <div {...{ onClick, className, style, ...popo }}>
