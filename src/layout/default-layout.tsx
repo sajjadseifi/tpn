@@ -5,10 +5,5 @@ interface DefaultLayoutProps {
 }
 
 export const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
-  return (
-    <div>
-      <div>Default Layout</div>
-      <div>{children}</div>
-    </div>
-  )
+  return <div>{children}</div>
 }
