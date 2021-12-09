@@ -3,18 +3,19 @@ import { WHITE } from '@src/constants/colors'
 import { IconBaseProps, IconType } from 'react-icons/lib'
 import { ImSpinner2 } from 'react-icons/im'
 interface IconButtonProps {
-  title?: string
-  icon?: IconType
-  iconProps?: IconBaseProps
-  revers?: boolean
-  color?: string
-  outline?: boolean
-  style?: any
-  loading?: boolean
-  loader?: React.FC<any>
-  onClick?: () => void
+  title: string
+  icon: IconType
+  iconProps: IconBaseProps
+  revers: boolean
+  color: string
+  outline: boolean
+  style: any
+  loading: boolean
+  disabled: boolean
+  loader: React.FC<any>
+  onClick: () => void
 }
-export const IconButton: FC<IconButtonProps> = (props) => {
+export const IconButton: FC<Partial<IconButtonProps>> = (props) => {
   const {
     icon: Icon,
     style: styles,
@@ -23,9 +24,10 @@ export const IconButton: FC<IconButtonProps> = (props) => {
     revers,
     iconProps,
     color,
-    onClick,
+    onClick: clicked,
     outline,
     loading,
+    disabled,
     ...popo
   } = props
   let Loader = loader ? loader : ImSpinner2
@@ -35,8 +37,13 @@ export const IconButton: FC<IconButtonProps> = (props) => {
     flexDirection: revers ? 'row-reverse' : 'row',
     ...styles
   }
+
+  const onClick = loading || disabled ? () => {} : clicked
+
+  const className = `ic ${loading ? 'loader' : ''} ${disabled ? 'disable' : ''}`
+
   return (
-    <div className={`ic ${loading ? 'loader' : ''}`} {...{ onClick, style, ...popo }}>
+    <div {...{ onClick, className, style, ...popo }}>
       {Icon && <Icon className="ic-icon" {...iconProps} />}
       <span className="ic-title">{title}</span>
       <div className="loading">
@@ -46,5 +53,6 @@ export const IconButton: FC<IconButtonProps> = (props) => {
   )
 }
 IconButton.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
+  disabled: false
 }

@@ -9,10 +9,11 @@ import { Partial } from '@src/types/types'
 
 interface MovmentProps {
   submitForm: (() => Promise<void>) & (() => Promise<any>)
-  isSubmitting?: boolean
+  isSubmitting: boolean
+  isValid: boolean
 }
 
-export const Movment: FC<Partial<MovmentProps>> = ({ submitForm, isSubmitting: loading }) => {
+export const Movment: FC<Partial<MovmentProps>> = ({ submitForm, isSubmitting: loading, isValid }) => {
   const dispatch = useDispatch()
   const { level, wizards } = useSelector<RootState>((state) => state.wizard) as WizardState
   const isStart = 0 === level
@@ -22,7 +23,7 @@ export const Movment: FC<Partial<MovmentProps>> = ({ submitForm, isSubmitting: l
   return (
     <div className={classes.Movment}>
       {isStart ? <div></div> : <IconButton onClick={onPrev} {...prevBtn} />}
-      <IconButton loading={loading} onClick={submitForm} {...(isEnd ? submitedBtn : nextBtn)} />
+      <IconButton disabled={!isValid} loading={loading} onClick={submitForm} {...(isEnd ? submitedBtn : nextBtn)} />
     </div>
   )
 }
