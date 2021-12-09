@@ -11,7 +11,6 @@ interface AdminLayoutProps {
 
 export const AdminLayout: FC<AdminLayoutProps> = ({ children }) => {
   const { expanded, ghost } = useSelector<RootState>((state) => state.sidebar) as ISideBarState
-  console.log(expanded, ghost)
   let classes = ['layout-sidebar']
   if (ghost) classes.push('railroad')
 

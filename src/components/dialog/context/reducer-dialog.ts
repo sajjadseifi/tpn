@@ -7,7 +7,6 @@ export const initialState: DialogStateProps = {
 }
 
 export const dialogReducer = (state: DialogStateProps, action: ActionType) => {
-  console.log(action, state)
   switch (action.type) {
     case actionTypes.DIALOG_INIT:
       const st = action.payload as DialogStateProps

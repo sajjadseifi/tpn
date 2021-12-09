@@ -56,15 +56,12 @@ export const FromWizard = () => {
       <div className={classes.FormContent}>
         <TitleUi className={classes.Title} subject={title} />
         <Formik initialValues={form} {...{ onSubmit, validationSchema }}>
-          {(props) => {
-            console.log(props.errors)
-            return (
-              <Form>
-                <Render {...{ form, ...props }} />
-                <MovmentCmp {...{ submitForm: props.submitForm }} />
-              </Form>
-            )
-          }}
+          {(props) => (
+            <Form>
+              <Render {...{ form, ...props }} />
+              <MovmentCmp {...{ submitForm: props.submitForm }} />
+            </Form>
+          )}
         </Formik>
       </div>
     </div>
