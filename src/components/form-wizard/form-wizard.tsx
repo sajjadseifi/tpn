@@ -18,14 +18,17 @@ import { ReturnSubmit } from '.'
 export const FromWizard = () => {
   const dispatch = useDispatch()
   const dialogDispatch = useDialogDispatch()
-  const { level, wizards } = useSelector<RootState>((state) => state.wizard) as WizardState
+  const root = useSelector<RootState>((state) => state) as RootState
+  const { level, wizards } = root.wizard
   const WIZARD = wizards[level]
 
   if (!WIZARD) return <Fragment></Fragment>
 
-  const { form, render: Render, title, movment, onSubmit: submited, validationSchema } = wizards[level]
+  const { form, render: Render, title, movment, onSubmit: submited, validationSchema: vs } = wizards[level]
 
   const MovmentCmp = movment ? movment : Movment
+
+  const validationSchema = typeof vs === 'function' ? vs(root) : vs
 
   const onSubmit = async (values: any) => {
     let action: any = level === wizards.length - 1 ? wizardActions.submitedWizard : wizardActions.nextWizard
@@ -53,16 +56,18 @@ export const FromWizard = () => {
   return (
     <div>
       <Proggres clickedProggresItem={(entered: number) => dispatch(wizardActions.selectEnteredWizard(entered))} />
-      <div className={classes.FormContent}>
-        <TitleUi className={classes.Title} subject={title} />
-        <Formik initialValues={form} {...{ onSubmit, validationSchema }}>
-          {(props) => (
-            <Form>
-              <Render {...{ form, ...props }} />
-              <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} isValid={props.isValid} />
-            </Form>
-          )}
-        </Formik>
+      <div className={classes.FormContentContainer}>
+        <div className={classes.FormContent}>
+          <TitleUi className={classes.Title} subject={title} />
+          <Formik initialValues={form} {...{ onSubmit, validationSchema }}>
+            {(props) => (
+              <Form>
+                <Render {...{ form, ...props }} />
+                <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} isValid={props.isValid} />
+              </Form>
+            )}
+          </Formik>
+        </div>
       </div>
     </div>
   )
