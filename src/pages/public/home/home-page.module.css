@@ -15,6 +15,36 @@
   flex: 1;
 }
 .HomePage .HomePic {
-  width: 800px;
+  width: 850px;
   height: auto;
+  transform: translateY(-10px);
+  animation: AnimJumping 4s infinite linear;
+}
+
+@keyframes AnimJumping {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .HomePage .HomePic {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .HomePage section {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .HomePage .HomePic {
+    width: 400px;
+  }
 }
