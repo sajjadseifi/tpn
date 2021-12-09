@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "r:start": "react-app-rewired start",
     "r:build": "yarn format && react-app-rewired build",
+    "npmbuild": "react-app-rewired build",
     "deploy": "gh-pages -d build",
     "deploy:git": "yarn predeploy:git && gh-pages -d build",
     "lint": "eslint .",
