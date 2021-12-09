@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import { sidebarActions } from '@src/store/actions'
 import { useDialogDispatch } from '@src/components/dialog/context/hook-dialog'
 import { actionTypes } from '@src/components/dialog/context'
+import { Link } from 'react-router-dom'
 
 export const AdminNavigation = () => {
   const dispatchDialog = useDialogDispatch()
@@ -34,9 +35,9 @@ export const AdminNavigation = () => {
       <div className={classes.Content}>
         <HeadProfile {...user} />
       </div>
-      <a className={classes.LogoBox}>
+      <Link to="/" className={classes.LogoBox}>
         <img className={classes.Logo} src={logo} alt="" />
-      </a>
+      </Link>
     </div>
   )
 }

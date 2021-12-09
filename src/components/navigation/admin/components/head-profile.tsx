@@ -2,7 +2,11 @@ import { UserLogged } from '@src/types/user.type'
 import React, { FC } from 'react'
 import classes from './components.module.css'
 
-export const HeadProfile: FC<UserLogged> = ({ username, picture, displayRole }) => {
+export const HeadProfile: FC<UserLogged> = ({
+  username,
+  picture,
+  displayRole
+}) => {
   return (
     <div className={classes.HeadProfile}>
       <div className={classes.Pic}>
