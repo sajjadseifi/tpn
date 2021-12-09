@@ -24,6 +24,7 @@
   transform: scale(1) translateY(0);
   font-size: 14px;
   transition: 0.5s;
+  color: #444;
 }
 .InputWizard .Label {
   position: absolute;
@@ -64,4 +65,11 @@
 
 .InputWizard .Input:focus ~ .InputProgress {
   width: 100%;
+}
+
+.Switch {
+  margin: 20px 0;
+}
+.Switch .Label {
+  margin-bottom: 10px;
 }
