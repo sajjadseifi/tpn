@@ -1,6 +1,7 @@
 import React from 'react'
 import { InputFormikWizard, SwitchFormikWizard, SwitchItem } from '@src/components/ui/formik-wizard'
 import * as Yup from 'yup'
+import { HintUi } from '@src/components/ui'
 
 const withMinMaxReq = () =>
   Yup.string()
@@ -21,6 +22,13 @@ const sexSwitchs: SwitchItem<any>[] = [
 export const PersonalForm = () => {
   return (
     <>
+      <HintUi
+        hints={[
+          'درخواست به صورت فیک میباشد و1 ثانیه زمان میبرد',
+          'فرم دارای اعتبار سنجی میباشد لطفا کامل کنید',
+          'به صورت رندم این بخش تایید یا رد خواهد شد ، درصورت رد شدن مجدد امتحان کنید '
+        ]}
+      />
       <InputFormikWizard label="نام" name="firstname" />
       <InputFormikWizard label="نام خانوادگی" name="lastname" />
       <InputFormikWizard label="شهر" name="city" />
