@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tpn/static/css/main.1e6a10fe.chunk.css",
-    "main.js": "/tpn/static/js/main.70eaaeba.chunk.js",
-    "main.js.map": "/tpn/static/js/main.70eaaeba.chunk.js.map",
-    "runtime-main.js": "/tpn/static/js/runtime-main.26b8154d.js",
-    "runtime-main.js.map": "/tpn/static/js/runtime-main.26b8154d.js.map",
-    "static/js/2.7741ca47.chunk.js": "/tpn/static/js/2.7741ca47.chunk.js",
-    "static/js/2.7741ca47.chunk.js.map": "/tpn/static/js/2.7741ca47.chunk.js.map",
-    "static/js/3.1a560190.chunk.js": "/tpn/static/js/3.1a560190.chunk.js",
-    "static/js/3.1a560190.chunk.js.map": "/tpn/static/js/3.1a560190.chunk.js.map",
-    "index.html": "/tpn/index.html",
-    "static/css/main.1e6a10fe.chunk.css.map": "/tpn/static/css/main.1e6a10fe.chunk.css.map",
-    "static/js/2.7741ca47.chunk.js.LICENSE.txt": "/tpn/static/js/2.7741ca47.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/tpn/static/media/Yekan.a63119cb.ttf",
-    "static/media/home-page-2.dfd3bd74.svg": "/tpn/static/media/home-page-2.dfd3bd74.svg",
-    "static/media/profile.f56037ff.jpg": "/tpn/static/media/profile.f56037ff.jpg"
+    "main.css": "/static/css/main.7d92f22c.chunk.css",
+    "main.js": "/static/js/main.70eaaeba.chunk.js",
+    "main.js.map": "/static/js/main.70eaaeba.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f58b4d41.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f58b4d41.js.map",
+    "static/js/2.7741ca47.chunk.js": "/static/js/2.7741ca47.chunk.js",
+    "static/js/2.7741ca47.chunk.js.map": "/static/js/2.7741ca47.chunk.js.map",
+    "static/js/3.1a560190.chunk.js": "/static/js/3.1a560190.chunk.js",
+    "static/js/3.1a560190.chunk.js.map": "/static/js/3.1a560190.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7d92f22c.chunk.css.map": "/static/css/main.7d92f22c.chunk.css.map",
+    "static/js/2.7741ca47.chunk.js.LICENSE.txt": "/static/js/2.7741ca47.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/Yekan.a63119cb.ttf",
+    "static/media/home-page-2.dfd3bd74.svg": "/static/media/home-page-2.dfd3bd74.svg",
+    "static/media/profile.f56037ff.jpg": "/static/media/profile.f56037ff.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.26b8154d.js",
+    "static/js/runtime-main.f58b4d41.js",
     "static/js/2.7741ca47.chunk.js",
-    "static/css/main.1e6a10fe.chunk.css",
+    "static/css/main.7d92f22c.chunk.css",
     "static/js/main.70eaaeba.chunk.js"
   ]
 }
