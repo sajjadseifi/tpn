@@ -1,0 +1,37 @@
+.NotFoundContainer {
+  background-color: #2b323c;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: FiraCode-Bold, FiraCode;
+}
+
+.NotFoundContainer .NotFoundContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.NotFoundContent .T404 {
+  font-size: 100px;
+  font-weight: bold;
+  transform: scale(2);
+  padding: 0 0 50px;
+  position: relative;
+  z-index: 10;
+}
+.T404 .Numberic {
+  color: #d09a67;
+}
+
+.T404 .Special {
+  color: #dae2f7;
+}
+
+.NotFoundContent .Codegen {
+  position: relative;
+  z-index: 11;
+}

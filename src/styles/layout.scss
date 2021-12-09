@@ -1,0 +1,44 @@
+@import 'variables.scss';
+.layout {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  //   overflow: hidden;
+  &-content {
+    flex: 1;
+    background: white;
+  }
+  &-nav {
+  }
+  &-section {
+    // background: yellow;
+  }
+  &-sidebar {
+    background-color: blanchedalmond;
+    position: relative;
+    z-index: 100;
+    &.railroad {
+      width: 0;
+    }
+    & > * {
+      transform: translate(0);
+      transition: 0.5s;
+    }
+    &.open > * {
+      transform: translateX(0);
+    }
+    &.close > * {
+      transform: translateX(100%);
+    }
+  }
+}
+@keyframes OpenSidebar {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}

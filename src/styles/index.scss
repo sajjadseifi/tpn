@@ -1,0 +1,49 @@
+/* font face */
+@import './layout.scss';
+@import './ui.scss';
+@import './code-gen.scss';
+@font-face {
+  font-family: FiraCode;
+  src: url(../assets/fonts/FiraCode-Medium.ttf);
+}
+@font-face {
+  font-family: FiraCode-Bold;
+  src: url(../assets/fonts/FiraCode-Bold.ttf);
+}
+@font-face {
+  font-family: yekan;
+  src: url(../assets/fonts/Yekan.ttf);
+}
+@font-face {
+  font-family: Traffic;
+  src: url(../assets/fonts/Traffic.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, Traffic, yekan, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: rtl;
+  color: rgb(30, 30, 30);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.flex {
+  display: flex;
+}
+.flex-just-center {
+  justify-content: center;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+.fa-font {
+  font-family: Traffic, yekan;
+}

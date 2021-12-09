@@ -1,23 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '@styles/index.css'
-import Routes from './routes'
+import '@styles/index.scss'
 import reportWebVitals from './reportWebVitals'
-import {  BrowserRouter as Router } from 'react-router-dom'
-
-// generate app for routeing
-const App = () => (
-  <React.StrictMode>
-    <Router>
-      <Routes />
-    </Router>
-  </React.StrictMode>
-)
+import { App } from './App'
 
 // entries dom element as root
 const root = document.getElementById('root')
 //
 // "homepage": "https://sajjadseifi.github.io/tpn",
-ReactDOM.render(<App />, root)
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  root
+)
 
 reportWebVitals()

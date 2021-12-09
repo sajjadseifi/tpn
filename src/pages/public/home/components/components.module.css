@@ -1,0 +1,30 @@
+.PresentTpn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.PresentTpn > * {
+  max-width: 500px;
+}
+.PresentTpn .Title {
+  color: #ff13d4;
+  font-size: 25px;
+}
+.PresentTpn .Content {
+  color: rgb(235, 235, 235);
+  font-size: 17px;
+  text-align: justify;
+  line-height: 26px;
+  margin: 40px 0;
+}
+.PresentTpn .BottomContainer {
+}
+
+.BottomContainer > * {
+  width: 140px;
+  border-radius: 2em;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 5px;
+  border-width: 4px;
+}

@@ -1,0 +1,28 @@
+.Dialog {
+  background-color: white;
+  border-radius: 5px;
+  min-width: 400px;
+  overflow: hidden;
+}
+.Dialog .Top {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #afffd7;
+}
+.Top .Title {
+  margin: 0;
+  padding: 0;
+}
+.Top .Icon {
+}
+.Dialog .Body {
+  padding: 0px 20px;
+  margin: 20px 0;
+}
+
+.Dialog .ButtonConaienr {
+  padding: 10px 20px;
+  display: flex;
+}

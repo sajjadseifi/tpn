@@ -1,0 +1,17 @@
+.AppLoading {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #001524;
+  direction: ltr;
+}
+
+.AppLoading .LoadingText {
+  font-weight: bold;
+  font-size: 20px;
+  color: #d3d3d3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

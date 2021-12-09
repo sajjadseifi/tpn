@@ -8,7 +8,7 @@ export const PublicRoutes: FC = () => {
   return (
     <DefaultLayout>
       <Switch>
-        <Route path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Redirect to={NOT_FOUND_PAGE} />
       </Switch>
     </DefaultLayout>

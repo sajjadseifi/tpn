@@ -1,0 +1,8 @@
+.FormWizardAdminPage {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.FormWizardAdminPage .Container {
+  width: 600px;
+}

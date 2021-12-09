@@ -1,0 +1,75 @@
+.InputWizard {
+  padding: 20px 0 0;
+  position: relative;
+  color: #444;
+  width: 50%;
+}
+.InputWizard .Input {
+  width: 100%;
+  display: block;
+  height: 24px;
+  border: 0 none;
+  border-bottom: 2px solid #888;
+  outline: 0;
+}
+
+.Label {
+  margin: 0;
+  padding: 5px 0;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  font-size: 14px;
+  transform: scale(1) translateY(0);
+  font-size: 14px;
+  transition: 0.5s;
+  color: #444;
+}
+.InputWizard .Label {
+  position: absolute;
+  top: 0;
+  transform: scale(1) translateY(0);
+}
+
+.ErrorMessage {
+  color: crimson;
+  font-size: 12px;
+  overflow: hidden;
+}
+.ErrorMessage .Error {
+}
+
+/* focused */
+.InputWizard .Input:focus + .Label,
+.InputWizard .Input:valid + .Label {
+  font-size: 12px;
+  transform: translateY(-100%);
+  color: cornflowerblue;
+}
+
+.InputWizard .InputContainer {
+  position: relative;
+  margin: 5px 0;
+}
+.InputWizard .InputProgress {
+  width: 0;
+  height: 2px;
+  background-color: cornflowerblue;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 0.4s;
+  border-radius: 2em;
+}
+
+.InputWizard .Input:focus ~ .InputProgress {
+  width: 100%;
+}
+
+.Switch {
+  margin: 20px 0;
+}
+.Switch .Label {
+  margin-bottom: 10px;
+}
