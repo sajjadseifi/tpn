@@ -1,4 +1,5 @@
 import { IWizard } from '@src/components/form-wizard'
+import { wizardActions } from '@src/store/actions'
 import { sleep } from '@src/utils/utils'
 import { AcceptorForm } from './sections'
 import { IdenfiyForm } from './sections'
@@ -19,9 +20,8 @@ export const forms: IWizard[] = [
     validationSchema: personalSchema,
     render: PersonalForm,
     onSubmit: async (values, dispatch) => {
-      console.log('start')
-      await sleep(1) //fetch data
-      console.log('end')
+      //fetch data
+      await sleep(1)
 
       const ok = Math.floor(Math.random() * 2) == 1
 
@@ -42,13 +42,17 @@ export const forms: IWizard[] = [
     validationSchema: idenfiySchema,
     render: IdenfiyForm,
     onSubmit: async (values, dispatch) => {
-      console.log('start')
-      await sleep(3) //fetch data
-      console.log('end')
+      //fetch data
+      await sleep(2)
 
       const ok = Math.floor(Math.random() * 2) == 1
+      const code = Math.random().toFixed(6).substring(2, 8)
 
-      const messages = ok ? ['ایمیل یا پیامک برای شما ارسال شد'] : ['لطفا ایمیل و شماره تلفن را درست وارد کیند']
+      dispatch(wizardActions.injectCode(code))
+
+      const messages = ok
+        ? ['ایمیل یا پیامک برای شما ارسال شد', `کد مورد نظر شما ${code} است`]
+        : ['خطایی رخ داده لطفا مجددا امتحان کنید']
 
       return { ok, messages }
     }
@@ -60,12 +64,11 @@ export const forms: IWizard[] = [
     },
     validationSchema: acceprorSchema,
     render: AcceptorForm,
-    onSubmit: async (values, dispatch) => {
-      console.log('start')
-      await sleep(0.5) //fetch data
-      console.log('end')
-
-      const ok = Math.floor(Math.random() * 2) == 1
+    onSubmit: async (values: any, dispatch, root) => {
+      //fetch data
+      await sleep(0.5)
+      console.log(values)
+      const ok = values.code == root.wizard.code
 
       const messages = ok ? ['ممنون از به تایید رساندن حسابتان'] : ['کد وارد شده صحیح نمیباشد']
       return { ok, messages }
