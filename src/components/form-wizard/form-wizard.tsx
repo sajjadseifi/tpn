@@ -59,7 +59,7 @@ export const FromWizard = () => {
           {(props) => (
             <Form>
               <Render {...{ form, ...props }} />
-              <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} />
+              <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} isValid={props.isValid} />
             </Form>
           )}
         </Formik>
