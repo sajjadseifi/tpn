@@ -49,6 +49,33 @@
   }
 }
 
+.hint-container {
+  list-style: none;
+  padding: 0;
+  color: cadetblue;
+  background-color: rgba(95, 158, 160, 0.15);
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 25px;
+  .hint-item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+  .hint-star {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+  }
+  .hint-txt {
+    padding: 0 2px;
+  }
+}
+
 @keyframes LoadingInfinit {
   0% {
     transform: rotate(0);
