@@ -24,4 +24,4 @@ export const selectEnteredWizard = (enterdLevel: number) =>
   createReducerProps(actionTypes.WIZARD_GOTO_ENTERED, { enterdLevel }) as wizardTypes.GotoEnteredFormWizardAction
 
 export const injectCode = (code: string) =>
-  createReducerProps(actionTypes.WIZARD_GOTO_ENTERED, { code }) as wizardTypes.CodeFormWizardAction
+  createReducerProps(actionTypes.WIZARD_CODE, { code }) as wizardTypes.CodeFormWizardAction
