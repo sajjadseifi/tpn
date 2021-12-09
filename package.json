@@ -17,7 +17,7 @@
     "format:check": "prettier --check .",
     "prepare": "husky install"
   },
-  "homepage": "https://sajjadseifi.github.io/home",
+  "homepage": "https://sajjadseifi.github.io/tpn",
   "dependencies": {
     "@types/yup": "^0.29.13",
     "connected-react-router": "^6.9.2",
