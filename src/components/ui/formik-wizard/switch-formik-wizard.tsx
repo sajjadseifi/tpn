@@ -15,8 +15,8 @@ export const SwitchFormikWizard: FC<SwitchFormikWizardProps> = ({ label, name, t
   return (
     <div className={classes.Switch}>
       <TitleFormWizard {...{ label, name }} />
-      {items.map(({ display, value }) => (
-        <label className={classes.SwitchItem}>
+      {items.map(({ display, value }, key) => (
+        <label key={key} className={classes.SwitchItem}>
           <Field {...{ name, type, value }} />
           <span>{display}</span>
         </label>
