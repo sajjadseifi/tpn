@@ -33,7 +33,7 @@ export const FromWizard = () => {
   const onSubmit = async (values: any) => {
     let action: any = level === wizards.length - 1 ? wizardActions.submitedWizard : wizardActions.nextWizard
     if (submited) {
-      const ret = await submited(values, dispatch)
+      const ret = await submited(values, dispatch, root)
       if (ret) {
         showDialog(ret, action)
         return
@@ -47,7 +47,13 @@ export const FromWizard = () => {
         icon: ok ? HiTicket : HiExclamation,
         status: ok ? 'Success' : 'Error',
         title: ok ? 'موفق' : 'خطا',
-        children: <>{messages}</>,
+        children: (
+          <ul>
+            {messages?.map((msg, key) => (
+              <li key={key}>{msg}</li>
+            ))}
+          </ul>
+        ),
         visibility: 'Show',
         onOk: () => ok && dispatch(action())
       })
