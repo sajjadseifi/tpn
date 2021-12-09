@@ -1,14 +1,21 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import Routes from './routes'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { DialogProvider } from './components/dialog/context'
 import { Provider } from 'react-redux'
 import store from './store'
-import { AppLoadin } from './components/loading'
+import { AppLoading } from './components/loading'
 
 export const App = () => {
+  const [fakeLoading, setFakeLoadig] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setFakeLoadig(false), 3000)
+  }, [])
+
+  if (fakeLoading) return <AppLoading />
   return (
-    <Suspense fallback={AppLoadin}>
+    <Suspense fallback={AppLoading}>
       <Provider store={store}>
         <DialogProvider>
           <Router basename="/tpn">
