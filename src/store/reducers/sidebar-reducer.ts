@@ -13,7 +13,10 @@ const initialState: ISideBarState = {
   ghost: true
 }
 
-const authReducer: FCR<ISideBarState, SideBarAction> = (state = initialState, action) => {
+const authReducer: FCR<ISideBarState, SideBarAction> = (
+  state = initialState,
+  action
+) => {
   switch (action.type) {
     case actionTypes.SIDEBAR_SHOW:
       return updateObject(state, { expanded: true })

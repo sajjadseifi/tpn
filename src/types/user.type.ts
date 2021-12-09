@@ -1,10 +1,10 @@
-import { Roles } from "./role.type";
+import { Roles } from './role.type'
 
-export interface UserLogged{
-    username:string,
-    firstname:string,
-    lastname:string,
-    picture?:string,
-    role:Roles,
-    displayRole:string,
+export interface UserLogged {
+  username: string
+  firstname: string
+  lastname: string
+  picture?: string
+  role: Roles
+  displayRole: string
 }

@@ -1,1 +1,1 @@
-export {HeadProfile} from "./head-profile"
+export { HeadProfile } from './head-profile'

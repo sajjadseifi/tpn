@@ -1,5 +1,9 @@
 import React, { FC, useEffect, useState } from 'react'
-import { IoAddCircle, IoAccessibilitySharp, IoReorderFour } from 'react-icons/io5'
+import {
+  IoAddCircle,
+  IoAccessibilitySharp,
+  IoReorderFour
+} from 'react-icons/io5'
 import { IconBaseProps, IconType } from 'react-icons/lib'
 import { Backrop } from '../backdrop/backrop'
 import { IconButton } from '../ui/icon-button'
@@ -32,7 +36,16 @@ const colorStatusDark = {
   Default: colors.BLACK
 }
 export const Dialog: FC<DialogPorps> = ({}) => {
-  const { icon, title, visibility, status, children, iconProps, onOk, onCancel }: DialogPorps = useDialogSelector()
+  const {
+    icon,
+    title,
+    visibility,
+    status,
+    children,
+    iconProps,
+    onOk,
+    onCancel
+  }: DialogPorps = useDialogSelector()
   const dispatch = useDialogDispatch()
   let bgTop = colorStatus.Default
   if (status) bgTop = colorStatus[status]
@@ -57,8 +70,19 @@ export const Dialog: FC<DialogPorps> = ({}) => {
         </div>
         <div className={classes.Body}>{children}</div>
         <div className={classes.ButtonConaienr}>
-          <IconButton onClick={() => onAction(onOk)} outline color={colors.GREEN} icon={IoAddCircle} title="تایید" />
-          <IconButton onClick={() => onAction(onCancel)} color={colors.RED} icon={IoAccessibilitySharp} title="لغو" />
+          <IconButton
+            onClick={() => onAction(onOk)}
+            outline
+            color={colors.GREEN}
+            icon={IoAddCircle}
+            title="تایید"
+          />
+          <IconButton
+            onClick={() => onAction(onCancel)}
+            color={colors.RED}
+            icon={IoAccessibilitySharp}
+            title="لغو"
+          />
         </div>
       </div>
     </Backrop>

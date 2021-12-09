@@ -11,7 +11,12 @@ interface SwitchFormikWizardProps {
   items: SwitchItem<any>[]
 }
 
-export const SwitchFormikWizard: FC<SwitchFormikWizardProps> = ({ label, name, type, items }) => {
+export const SwitchFormikWizard: FC<SwitchFormikWizardProps> = ({
+  label,
+  name,
+  type,
+  items
+}) => {
   return (
     <div className={classes.Switch}>
       <TitleFormWizard {...{ label, name }} />

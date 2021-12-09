@@ -13,7 +13,13 @@ interface BackropProps {
   onClosed?: () => void
 }
 
-export const Backrop: FC<BackropProps> = ({ visibility, onClosed, closeable, children, ...style }) => {
+export const Backrop: FC<BackropProps> = ({
+  visibility,
+  onClosed,
+  closeable,
+  children,
+  ...style
+}) => {
   const dispatch = useDialogDispatch()
 
   const onClose = () => {

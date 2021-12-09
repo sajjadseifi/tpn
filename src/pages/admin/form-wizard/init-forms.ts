@@ -70,7 +70,9 @@ export const forms: IWizard[] = [
       console.log(values)
       const ok = values.code == root.wizard.code
 
-      const messages = ok ? ['ممنون از به تایید رساندن حسابتان'] : ['کد وارد شده صحیح نمیباشد']
+      const messages = ok
+        ? ['ممنون از به تایید رساندن حسابتان']
+        : ['کد وارد شده صحیح نمیباشد']
       return { ok, messages }
     }
   }

@@ -10,11 +10,20 @@ interface InputFormikWizardProps extends FieldAttributes<any> {
   touched?: string
 }
 
-export const InputFormikWizard: FC<InputFormikWizardProps> = ({ label, name, type }) => {
+export const InputFormikWizard: FC<InputFormikWizardProps> = ({
+  label,
+  name,
+  type
+}) => {
   return (
     <div className={classes.InputWizard}>
       <div className={classes.InputContainer}>
-        <Field className={classes.Input} id={name} {...{ name, type }} required />
+        <Field
+          className={classes.Input}
+          id={name}
+          {...{ name, type }}
+          required
+        />
         <TitleFormWizard {...{ label, name }} />
         <div className={classes.InputProgress}></div>
       </div>

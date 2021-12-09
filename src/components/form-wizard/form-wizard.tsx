@@ -24,14 +24,24 @@ export const FromWizard = () => {
 
   if (!WIZARD) return <Fragment></Fragment>
 
-  const { form, render: Render, title, movment, onSubmit: submited, validationSchema: vs } = wizards[level]
+  const {
+    form,
+    render: Render,
+    title,
+    movment,
+    onSubmit: submited,
+    validationSchema: vs
+  } = wizards[level]
 
   const MovmentCmp = movment ? movment : Movment
 
   const validationSchema = typeof vs === 'function' ? vs(root) : vs
 
   const onSubmit = async (values: any) => {
-    let action: any = level === wizards.length - 1 ? wizardActions.submitedWizard : wizardActions.nextWizard
+    let action: any =
+      level === wizards.length - 1
+        ? wizardActions.submitedWizard
+        : wizardActions.nextWizard
     if (submited) {
       const ret = await submited(values, dispatch, root)
       if (ret) {
@@ -41,7 +51,10 @@ export const FromWizard = () => {
     }
     dispatch(action())
   }
-  const showDialog = ({ messages, ok }: Partial<ReturnSubmit>, action: () => WizardAction) => {
+  const showDialog = (
+    { messages, ok }: Partial<ReturnSubmit>,
+    action: () => WizardAction
+  ) => {
     dialogDispatch(
       actionTypes.initDialog({
         icon: ok ? HiTicket : HiExclamation,
@@ -61,7 +74,11 @@ export const FromWizard = () => {
   }
   return (
     <div>
-      <Proggres clickedProggresItem={(entered: number) => dispatch(wizardActions.selectEnteredWizard(entered))} />
+      <Proggres
+        clickedProggresItem={(entered: number) =>
+          dispatch(wizardActions.selectEnteredWizard(entered))
+        }
+      />
       <div className={classes.FormContentContainer}>
         <div className={classes.FormContent}>
           <TitleUi className={classes.Title} subject={title} />
@@ -69,7 +86,11 @@ export const FromWizard = () => {
             {(props) => (
               <Form>
                 <Render {...{ form, ...props }} />
-                <MovmentCmp submitForm={props.submitForm} isSubmitting={props.isSubmitting} isValid={props.isValid} />
+                <MovmentCmp
+                  submitForm={props.submitForm}
+                  isSubmitting={props.isSubmitting}
+                  isValid={props.isValid}
+                />
               </Form>
             )}
           </Formik>

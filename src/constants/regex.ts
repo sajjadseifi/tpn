@@ -3,4 +3,5 @@ export const PHONE =
 
 export const NATIONAL_CODE = /^[0-9]{10}$/
 
-export const EMAIL = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+export const EMAIL =
+  /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/

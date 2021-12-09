@@ -6,8 +6,14 @@ import { updateObject } from '@src/utils/utils'
 
 export const DialogStateContext = React.createContext({})
 
-export const DialogProvider: React.FC<DialogStateProps> = ({ children, ...initialValues }) => {
-  const [state, dispatch] = React.useReducer(dialogReducer, updateObject(initialState, initialValues))
+export const DialogProvider: React.FC<DialogStateProps> = ({
+  children,
+  ...initialValues
+}) => {
+  const [state, dispatch] = React.useReducer(
+    dialogReducer,
+    updateObject(initialState, initialValues)
+  )
   const value = { state, dispatch }
   return (
     <DialogStateContext.Provider value={value}>

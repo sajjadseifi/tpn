@@ -4,7 +4,11 @@ import { UserLogged } from '@src/types/user.type'
 
 interface ProfileAdmin extends UserLogged {}
 
-export const ProfileAdmin: FC<ProfileAdmin> = ({ firstname, lastname, picture }) => {
+export const ProfileAdmin: FC<ProfileAdmin> = ({
+  firstname,
+  lastname,
+  picture
+}) => {
   return (
     <div className={classes.ProfileAdmin}>
       <div className={classes.ContentProfile}>

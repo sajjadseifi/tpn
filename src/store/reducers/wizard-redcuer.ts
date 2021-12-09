@@ -21,7 +21,8 @@ const initialState: WizardState = {
   visitedLevel: 0,
   code: ''
 }
-const init = (state: WizardState, wizards: IWizard[]) => updateObject(state, { wizards })
+const init = (state: WizardState, wizards: IWizard[]) =>
+  updateObject(state, { wizards })
 
 const goPrev = (state: WizardState) => {
   if (state.level < 1) return state
@@ -34,7 +35,10 @@ const goNext = (state: WizardState) => {
 
   let updatedLevel = state.level + 1
 
-  return updateObject(state, { level: updatedLevel, visitedLevel: updatedLevel })
+  return updateObject(state, {
+    level: updatedLevel,
+    visitedLevel: updatedLevel
+  })
 }
 
 const goEntered = (state: WizardState, entered: number) => {
@@ -48,7 +52,10 @@ const submit = (state: WizardState, values: any) => {
   return state
 }
 
-const wizardReducer: FCR<WizardState, WizardAction> = (state = initialState, action) => {
+const wizardReducer: FCR<WizardState, WizardAction> = (
+  state = initialState,
+  action
+) => {
   switch (action.type) {
     case actionTypes.WIZARD_INIT:
       return init(state, action.payload)

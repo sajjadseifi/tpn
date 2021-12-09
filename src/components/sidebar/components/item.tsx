@@ -13,7 +13,10 @@ export interface Props extends ItemProps {
 }
 export const Item: FC<Props> = ({ icon: Icon, title, onPress, select }) => {
   return (
-    <li onClick={onPress} className={[classes.MenuItem, select ? classes.Select : ''].join(' ')}>
+    <li
+      onClick={onPress}
+      className={[classes.MenuItem, select ? classes.Select : ''].join(' ')}
+    >
       <div className={classes.ItemTitle}>{title}</div>
       <div className={classes.ItemIcon}>
         <Icon />

@@ -1,5 +1,9 @@
 import React from 'react'
-import { InputFormikWizard, SwitchFormikWizard, SwitchItem } from '@src/components/ui/formik-wizard'
+import {
+  InputFormikWizard,
+  SwitchFormikWizard,
+  SwitchItem
+} from '@src/components/ui/formik-wizard'
 import * as Yup from 'yup'
 import { HintUi } from '@src/components/ui'
 

@@ -17,4 +17,7 @@ export interface AppThunkAction<TAction> {
   (dispatch: (action: TAction) => void, getState: () => RootState): void
 }
 
-export default createStore(combineReducers<RootState>(reducers), applyMiddleware(thunk))
+export default createStore(
+  combineReducers<RootState>(reducers),
+  applyMiddleware(thunk)
+)

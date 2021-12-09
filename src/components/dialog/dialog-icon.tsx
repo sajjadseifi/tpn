@@ -10,7 +10,11 @@ interface DialogIconProps {
   status?: StatusType
 }
 
-export const DialogIcon: FC<DialogIconProps> = ({ icon, iconProps, status }) => {
+export const DialogIcon: FC<DialogIconProps> = ({
+  icon,
+  iconProps,
+  status
+}) => {
   let Icon = icon
   let props = iconProps
 

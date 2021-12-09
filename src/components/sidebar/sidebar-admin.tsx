@@ -14,8 +14,16 @@ export const SidebarAdmin = () => {
   return (
     <div className={classes.Slider}>
       <div className={classes.TopSlide}>
-        <CloseIcon size={22} className={classes.Icon} onClick={onHiddenSidebar} />
-        <SettingIcon size={22} className={classes.Icon} onClick={() => console.log('setting')} />
+        <CloseIcon
+          size={22}
+          className={classes.Icon}
+          onClick={onHiddenSidebar}
+        />
+        <SettingIcon
+          size={22}
+          className={classes.Icon}
+          onClick={() => console.log('setting')}
+        />
       </div>
       <ProfileAdmin {...user} />
       <MenuItems items={adminSidebarItems} />

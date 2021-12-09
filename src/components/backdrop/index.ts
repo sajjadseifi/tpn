@@ -1,1 +1,1 @@
-export {Backrop as default} from "./backrop"
+export { Backrop as default } from './backrop'
