@@ -1,0 +1,9 @@
+.AppLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blueviolet;
+}
+
+.AppLoading .Cotnent {
+}
