@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { NavigationAdmin } from '@src/components/navigation'
+import { AdminNavigation } from '@src/components/navigation'
 import { SidebarAdmin } from '@src/components/sidebar'
 import { useSelector } from 'react-redux'
 import { RootState } from '@src/store'
@@ -19,7 +19,7 @@ export const AdminLayout: FC<AdminLayoutProps> = ({ children }) => {
     <div className="layout">
       <div className="layout-content">
         <nav className="layout-nav">
-          <NavigationAdmin />
+          <AdminNavigation />
         </nav>
         <section className="layout-section">{children}</section>
       </div>
