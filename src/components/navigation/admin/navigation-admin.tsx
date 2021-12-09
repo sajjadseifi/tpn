@@ -5,12 +5,12 @@ import { HiMenuAlt3 } from 'react-icons/hi'
 import { BLACK } from '@src/constants/colors'
 import { HeadProfile } from './components'
 import { user } from '@src/constants/dumy-data'
-import { actionTypes } from '../dialog/context'
-import { useDialogDispatch } from '../dialog/context/hook-dialog'
 import { useDispatch } from 'react-redux'
 import { sidebarActions } from '@src/store/actions'
+import { useDialogDispatch } from '@src/components/dialog/context/hook-dialog'
+import { actionTypes } from '@src/components/dialog/context'
 
-export const NavigationAdmin = () => {
+export const AdminNavigation = () => {
   const dispatchDialog = useDialogDispatch()
   const dispatch = useDispatch()
   const onMenuClick = () => {
