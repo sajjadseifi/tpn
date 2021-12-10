@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: 0.5s;
+  transform: scale(1);
 }
 
 .NotFoundContent .T404 {
@@ -34,4 +36,24 @@
 .NotFoundContent .Codegen {
   position: relative;
   z-index: 11;
+}
+
+@media only screen and (max-width: 900px) {
+  .NotFoundContainer .NotFoundContent {
+    transform: scale(0.8);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .NotFoundContainer .NotFoundContent {
+    transform: scale(0.6);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .NotFoundContainer .NotFoundContent {
+    transform: scale(0.6);
+  }
+  .NotFoundContent .T404 {
+    transform: scale(1.5);
+  }
 }
