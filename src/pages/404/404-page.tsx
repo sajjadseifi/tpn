@@ -29,6 +29,15 @@ export const NotFound404Page = () => {
               </span>
               <span className={'codegen-spec'}>"</span>
             </div>
+
+            <div className={'codegen-line'}>
+              <div className="flex flex-align-start">
+                <span className={'codegen-comment'}>//</span>
+                <p className={'codegen-comment-val fa-font '}>
+                  برای رفتن به صفحه اصلی روی این بخش کلیک کنید
+                </p>
+              </div>
+            </div>
             <div className={'codegen-line'}>
               <span className={'codegen-iden'}>link</span>
               <span className={'codegen-space'}></span>
@@ -36,8 +45,8 @@ export const NotFound404Page = () => {
               <span className={'codegen-space'}></span>
               <span className={'codegen-spec'}>"</span>
               <Link to={PUBLIC_PAGE} className={'codegen-link'}>
-                <span className={`fa-font  codegen-val-str`}>
-                  برای رفتن به صفحه اصلی روی متن کلیک کنید.
+                <span className={`fa-font codegen-val-str`}>
+                  رفتن به صفحه اصلی
                 </span>
               </Link>
               <span className={'codegen-spec'}>"</span>
